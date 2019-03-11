@@ -216,7 +216,7 @@ bankAccount** readFile(string file_path,int &size){
 	else{
 		int size=0;
 		int count=0;
-		int i=0,j=0,h=0;
+		int i=0,j=0,h=0;			//variables for loop iterations
 		string temp;
 		int ID,no_of_transactions=0;
 		float balance,balance_limit;
@@ -245,7 +245,7 @@ void printAccounts(bankAccount** Arr,int size){
 		Arr[i]->print();
 	}
 }
-bool makeTransaction(bankAccount** Arr,int size,int id,float amount,string type){
+bool makeTransaction(bankAccount** Arr,int size,int id,float amount,string type){  //body for make transaction function
 	for(int i=0;i<size;i++){
 		if(Arr[i]->getID()==id){
 			if(type=="deposit"){
@@ -271,7 +271,7 @@ bool makeTransaction(bankAccount** Arr,int size,int id,float amount,string type)
 
 	}
 }
-void deleteAccounts(bankAccount**& Arr,int &size){
+void deleteAccounts(bankAccount**& Arr,int &size){		//body for delete accounts function
 	int count=0;
 	for(int i=0;i<size;i++){
 		if((Arr[i]->getbalance()==0)&&(Arr[i]->get_no_of_transactions()==0)){
